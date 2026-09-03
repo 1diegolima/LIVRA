@@ -11,7 +11,10 @@ export const CartProvider = ({ children }) => {
   const [items, setItems] = useState(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      return saved ? JSON.parse(saved) : [];
+      if (!saved) return [];
+      const parsed = JSON.parse(saved);
+      if (!Array.isArray(parsed)) return [];
+      return parsed.filter(item => item && item.book && typeof item.book.price === 'number');
     } catch {
       return [];
     }
@@ -51,13 +54,14 @@ export const CartProvider = ({ children }) => {
   }, [coupon]);
 
   const addToCart = (book, quantity = 1) => {
+    if (!book || !book.id) return;
     setItems(prev => {
-      const existing = prev.find(item => item.book.id === book.id);
+      const existing = prev.find(item => item.book && item.book.id === book.id);
       if (existing) {
         addToast(`Quantidade de "${book.title}" atualizada no carrinho!`, 'success');
         return prev.map(item =>
-          item.book.id === book.id
-            ? { ...item, quantity: item.quantity + quantity }
+          item.book && item.book.id === book.id
+            ? { ...item, quantity: (item.quantity || 1) + quantity }
             : item
         );
       } else {
@@ -140,8 +144,12 @@ export const CartProvider = ({ children }) => {
     }, 400);
   };
 
-  const subtotal = items.reduce((acc, item) => acc + item.book.price * item.quantity, 0);
-  const totalItemsCount = items.reduce((acc, item) => acc + item.quantity, 0);
+  const subtotal = items.reduce((acc, item) => {
+    const price = item?.book?.price || 0;
+    const qty = item?.quantity || 1;
+    return acc + (price * qty);
+  }, 0);
+  const totalItemsCount = items.reduce((acc, item) => acc + (item?.quantity || 0), 0);
   const discountAmount = coupon ? (subtotal * coupon.percentage) / 100 : 0;
   const effectiveShipping = subtotal >= 120 && items.length > 0 ? 0 : shippingCost;
   const total = Math.max(0, subtotal - discountAmount + effectiveShipping);

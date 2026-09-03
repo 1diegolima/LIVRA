@@ -6,7 +6,8 @@ import {
   ShoppingBag,
   Tag,
   Truck,
-  ArrowLeft
+  ArrowLeft,
+  ShieldCheck
 } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { ConditionBadge } from '../components/book/ConditionBadge';
