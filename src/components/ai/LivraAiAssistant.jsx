@@ -150,11 +150,11 @@ export const LivraAiAssistant = () => {
                 <div
                   className={`max-w-[85%] rounded-2xl p-3 text-xs sm:text-sm leading-relaxed ${
                     msg.sender === 'user'
-                      ? 'bg-ink-900 text-white rounded-br-xs'
+                      ? 'bg-ink-900 text-white rounded-br-xs font-medium'
                       : 'bg-white text-ink-800 border border-paper-200 shadow-2xs rounded-bl-xs'
                   }`}
                 >
-                  <p>{msg.text}</p>
+                  <p className="whitespace-pre-line">{msg.text}</p>
 
                   {/* Render Book Recommendations if present */}
                   {msg.books && msg.books.length > 0 && (
@@ -192,9 +192,14 @@ export const LivraAiAssistant = () => {
             ))}
 
             {loading && (
-              <div className="flex items-center gap-2 text-ink-500 text-xs p-2 bg-white rounded-xl border border-paper-200 w-fit">
+              <div className="flex items-center gap-2 text-ink-600 text-xs p-3 bg-white rounded-2xl border border-paper-200 shadow-2xs w-fit rounded-bl-xs">
                 <Sparkles className="w-3.5 h-3.5 text-amber-500 animate-spin" />
-                <span>Analisando o acervo da LIVRA...</span>
+                <span className="font-medium">Assistente digitando...</span>
+                <span className="flex gap-1 ml-1">
+                  <span className="w-1.5 h-1.5 bg-amber-500 rounded-full animate-bounce [animation-delay:-0.3s]"></span>
+                  <span className="w-1.5 h-1.5 bg-amber-500 rounded-full animate-bounce [animation-delay:-0.15s]"></span>
+                  <span className="w-1.5 h-1.5 bg-amber-500 rounded-full animate-bounce"></span>
+                </span>
               </div>
             )}
             <div ref={messagesEndRef} />

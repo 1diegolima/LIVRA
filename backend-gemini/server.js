@@ -20,10 +20,8 @@ try {
 
 const app = express();
 
-// Configuração do CORS (permite requisições do frontend Vite em desenvolvimento)
-app.use(cors({
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:3000']
-}));
+// Configuração do CORS (permite requisições de qualquer porta do frontend Vite local)
+app.use(cors());
 
 app.use(express.json());
 
