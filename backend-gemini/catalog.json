@@ -1,0 +1,218 @@
+[
+  {
+    "id": "1",
+    "title": "Crime e Castigo",
+    "author": "Fiódor Dostoiévski",
+    "price": 34.90,
+    "condition": "Usado",
+    "conditionState": "Muito bom",
+    "category": "Literatura Clássica / Ficção"
+  },
+  {
+    "id": "2",
+    "title": "1984 (Edição Especial de Luxo)",
+    "author": "George Orwell",
+    "price": 49.90,
+    "condition": "Novo",
+    "conditionState": "Excelente",
+    "category": "Ficção"
+  },
+  {
+    "id": "3",
+    "title": "Dom Casmurro",
+    "author": "Machado de Assis",
+    "price": 24.50,
+    "condition": "Usado",
+    "conditionState": "Excelente",
+    "category": "Literatura Brasileira"
+  },
+  {
+    "id": "4",
+    "title": "Duna (Livro 1)",
+    "author": "Frank Herbert",
+    "price": 68.00,
+    "condition": "Novo",
+    "conditionState": "Excelente",
+    "category": "Ficção / Fantasia"
+  },
+  {
+    "id": "5",
+    "title": "Torto Arado",
+    "author": "Itamar Vieira Junior",
+    "price": 39.90,
+    "condition": "Usado",
+    "conditionState": "Muito bom",
+    "category": "Literatura Brasileira"
+  },
+  {
+    "id": "6",
+    "title": "O Hobbit (Edição Comemorativa)",
+    "author": "J.R.R. Tolkien",
+    "price": 42.00,
+    "condition": "Novo",
+    "conditionState": "Excelente",
+    "category": "Fantasia"
+  },
+  {
+    "id": "7",
+    "title": "Sapiens: Uma Breve História da Humanidade",
+    "author": "Yuval Noah Harari",
+    "price": 46.50,
+    "condition": "Usado",
+    "conditionState": "Bom",
+    "category": "História / Ciências"
+  },
+  {
+    "id": "8",
+    "title": "O Mito de Sísifo",
+    "author": "Albert Camus",
+    "price": 28.00,
+    "condition": "Usado",
+    "conditionState": "Muito bom",
+    "category": "Filosofia"
+  },
+  {
+    "id": "9",
+    "title": "Orgulho e Preconceito",
+    "author": "Jane Austen",
+    "price": 36.90,
+    "condition": "Novo",
+    "conditionState": "Excelente",
+    "category": "Romance"
+  },
+  {
+    "id": "10",
+    "title": "O Iluminado (The Shining)",
+    "author": "Stephen King",
+    "price": 44.90,
+    "condition": "Usado",
+    "conditionState": "Excelente",
+    "category": "Terror / Suspense"
+  },
+  {
+    "id": "11",
+    "title": "Sandman: Edição Definitiva Vol. 1",
+    "author": "Neil Gaiman",
+    "price": 119.00,
+    "condition": "Usado",
+    "conditionState": "Muito bom",
+    "category": "HQs e Mangás"
+  },
+  {
+    "id": "12",
+    "title": "Entendendo Algoritmos",
+    "author": "Aditya Y. Bhargava",
+    "price": 52.00,
+    "condition": "Novo",
+    "conditionState": "Excelente",
+    "category": "Tecnologia"
+  },
+  {
+    "id": "13",
+    "title": "Cosmos",
+    "author": "Carl Sagan",
+    "price": 58.90,
+    "condition": "Usado",
+    "conditionState": "Excelente",
+    "category": "Ciências"
+  },
+  {
+    "id": "14",
+    "title": "O Silêncio dos Inocentes",
+    "author": "Thomas Harris",
+    "price": 31.90,
+    "condition": "Usado",
+    "conditionState": "Bom",
+    "category": "Suspense"
+  },
+  {
+    "id": "15",
+    "title": "O Nome da Rosa",
+    "author": "Umberto Eco",
+    "price": 45.00,
+    "condition": "Usado",
+    "conditionState": "Muito bom",
+    "category": "Suspense / Romance Histórico"
+  },
+  {
+    "id": "16",
+    "title": "Memórias Póstumas de Brás Cubas",
+    "author": "Machado de Assis",
+    "price": 29.90,
+    "condition": "Novo",
+    "conditionState": "Excelente",
+    "category": "Literatura Brasileira"
+  },
+  {
+    "id": "17",
+    "title": "O Senhor dos Anéis: A Sociedade do Anel",
+    "author": "J.R.R. Tolkien",
+    "price": 54.90,
+    "condition": "Novo",
+    "conditionState": "Excelente",
+    "category": "Fantasia"
+  },
+  {
+    "id": "18",
+    "title": "Clean Code: Habilidades Práticas do Agile Software",
+    "author": "Robert C. Martin",
+    "price": 79.90,
+    "condition": "Usado",
+    "conditionState": "Muito bom",
+    "category": "Tecnologia"
+  },
+  {
+    "id": "19",
+    "title": "Flores para Algernon",
+    "author": "Daniel Keyes",
+    "price": 38.00,
+    "condition": "Usado",
+    "conditionState": "Excelente",
+    "category": "Ficção"
+  },
+  {
+    "id": "20",
+    "title": "Akira: Volume 1",
+    "author": "Katsuhiro Otomo",
+    "price": 64.90,
+    "condition": "Novo",
+    "conditionState": "Excelente",
+    "category": "HQs e Mangás"
+  },
+  {
+    "id": "21",
+    "title": "Meditações",
+    "author": "Marco Aurélio",
+    "price": 22.90,
+    "condition": "Usado",
+    "conditionState": "Aceitável",
+    "category": "Filosofia"
+  },
+  {
+    "id": "22",
+    "title": "A Revolução dos Bichos",
+    "author": "George Orwell",
+    "price": 19.90,
+    "condition": "Novo",
+    "conditionState": "Excelente",
+    "category": "Ficção"
+  },
+  {
+    "id": "23",
+    "title": "O Pequeno Príncipe",
+    "author": "Antoine de Saint-Exupéry",
+    "price": 21.00,
+    "condition": "Usado",
+    "conditionState": "Muito bom",
+    "category": "Literatura Clássica / Ficção"
+  },
+  {
+    "id": "24",
+    "title": "Grande Sertão: Veredas",
+    "author": "Guimarães Rosa",
+    "price": 69.90,
+    "condition": "Novo",
+    "conditionState": "Excelente",
+    "category": "Literatura Brasileira"
+  }
+]

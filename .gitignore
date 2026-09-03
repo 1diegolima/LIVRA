@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Production build
+dist/
+dist-ssr/
+build/
+
+# Environment variables & API Keys (Segurança)
+.env
+.env.*
+!.env.example
+*.pem
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Editor & OS
+.DS_Store
+.idea/
+.vscode/
+Thumbs.db

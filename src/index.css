@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#FAF8F5] text-ink-900 antialiased font-sans;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  h1, h2, h3, .font-editorial {
+    @apply font-serif tracking-tight text-ink-900;
+  }
+}
+
+/* Custom scrollbars and bookish touches */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F0E8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D5C4AC;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #BEA88A;
+}
+
+/* Book Cover 3D/Shadow effects */
+.book-spine-effect {
+  position: relative;
+}
+.book-spine-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 12px;
+  background: linear-gradient(to right, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0.08) 40%, rgba(255,255,255,0.15) 80%, rgba(0,0,0,0) 100%);
+  pointer-events: none;
+}
+
+/* Paper textured subtle noise */
+.paper-pattern {
+  background-color: #FAF8F5;
+  background-image: radial-gradient(#E8E2D5 0.75px, transparent 0.75px);
+  background-size: 16px 16px;
+}
