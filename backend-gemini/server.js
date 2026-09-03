@@ -20,12 +20,11 @@ try {
 
 const app = express();
 
-// Configuração do CORS (permite requisições de qualquer porta do frontend Vite local)
+// Configuração do CORS aberta para o frontend local em qualquer porta (5173, 5174, etc.)
 app.use(cors());
-
 app.use(express.json());
 
-// Inicialização do cliente oficial Google Gen AI com a chave protegida no .env
+// Inicialização do cliente oficial Google Gen AI
 const ai = new GoogleGenAI({
   apiKey: process.env.GEMINI_API_KEY || '',
 });
@@ -76,30 +75,35 @@ app.post('/api/chat', async (req, res) => {
 
     let outputText = '';
 
-    // Utiliza a API de Interações / Modelos recomendada pelo SDK oficial
-    try {
-      if (ai.interactions && typeof ai.interactions.create === 'function') {
-        const interaction = await ai.interactions.create({
-          model: 'gemini-3.7-flash',
-          input: prompt,
-        });
-        outputText = interaction.output_text || interaction.text;
-      } else if (ai.models && typeof ai.models.generateContent === 'function') {
-        const response = await ai.models.generateContent({
-          model: 'gemini-2.5-flash',
-          contents: prompt,
-        });
-        outputText = response.text;
+    // Tenta primeiro o modelo gemini-3.6-flash (alta cota e velocidade), com fallback para gemini-3.7-flash
+    const modelsToTry = ['gemini-3.6-flash', 'gemini-3.7-flash'];
+    let lastError = null;
+
+    for (const modelName of modelsToTry) {
+      try {
+        if (ai.interactions && typeof ai.interactions.create === 'function') {
+          const interaction = await ai.interactions.create({
+            model: modelName,
+            input: prompt,
+          });
+          outputText = interaction.output_text || interaction.text;
+          if (outputText) break;
+        }
+      } catch (err) {
+        lastError = err;
+        console.warn(`Tentativa com ${modelName} falhou:`, err.message || err);
       }
-    } catch (apiError) {
-      console.error('Erro na chamada da Gemini API:', apiError);
+    }
+
+    if (!outputText) {
+      console.error('Todas as tentativas com a Gemini API falharam:', lastError);
       return res.status(500).json({
-        erro: 'Falha ao consultar a Gemini API. Verifique sua GEMINI_API_KEY no arquivo .env.',
+        erro: 'A Gemini API está momentaneamente com limite de requisições excedido. Por favor, aguarde alguns segundos e tente novamente.',
       });
     }
 
     res.json({
-      resposta: outputText || 'Olá! Como posso ajudar você a encontrar sua próxima leitura na LIVRA?',
+      resposta: outputText,
     });
 
   } catch (error) {
